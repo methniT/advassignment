@@ -1,7 +1,11 @@
+
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -14,37 +18,48 @@ public class RegistrationServlet extends HttpServlet {
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        String id = request.getParameter("id");        
-        String fullname = request.getParameter("fullname");
-        String mobilenumber = request.getParameter("mobilenumber");
-        String email = request.getParameter("email");
-        String username = request.getParameter("username");
-        String password = request.getParameter("password");
 
+    	try {
 
-        try {
-            Class.forName("com.mysql.jdbc.Driver");
-            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/advdb", "root", "root");
-
-
-            PreparedStatement statement = con.prepareStatement("insert into register values(?)");
-            statement.setString(1, id);
-            statement.setString(2, fullname);
-            statement.setString(3, mobilenumber);
-            statement.setString(4, email);
-            statement.setString(5, username);
-            statement.setString(6, password);
-
-            int rowsInserted = statement.executeUpdate();
-            if (rowsInserted > 0) {
-                response.sendRedirect("menupage.jsp");
-            }
-
-        } catch (Exception e) {
-           
-                response.sendRedirect("loginpage.jsp");
-        }
-    }
+        	response.setContentType("text/html");
+			Class.forName("com.mysql.cj.jdbc.Driver");
+			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/advdb ","root","root");
+			
+	        String fullname = request.getParameter("fullname");
+	        String mobilenumber = request.getParameter("mobilenumber");
+	        String email = request.getParameter("email");
+	        String username = request.getParameter("username");
+	        String password = request.getParameter("password");
+	        
+	        PreparedStatement ps = con.prepareStatement("insert into advdb  login where username = ? and password = ?");
+	        ps.setString(1,fullname);
+	        ps.setString(2, mobilenumber);
+	        ps.setString(3, email);
+	        ps.setString(4, username);
+	        ps.setString(5, password);
+	        ResultSet rs = ps.executeQuery();
+	        
+	        if(rs.next())
+	        {
+	        	RequestDispatcher rd = request.getRequestDispatcher("menupage.jsp");
+	        	rd.forward(request, response);
+	        }
+	        else
+	        {
+	        	response.sendRedirect("loginpage.jsp?status");
+	        }
+	        
+	        
+		} catch (ClassNotFoundException e) {
+	
+			e.printStackTrace();
+		} catch (SQLException e) {
+		
+			e.printStackTrace();
+		};
+	}
 }
+    	
+
 
 

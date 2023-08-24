@@ -98,20 +98,11 @@ button:hover {
     <div class="register-container">
         <div class="register-header">
             <h1>Register</h1><br><br>
-            <script>
-
-    </script>
-        </div>
+            </div>
+    
         <form action="RegistrationServlet" method="post" class="register-form">
-            
-            <label for="id"><b>ID:</b></label>
-            <input type="text" name="id" placeholder="ID" required><!-- comment -->            
-            <label for="fullname"><b>Full Name:</b></label>
-            <input type="text" name="fullname" placeholder="Full Name" required>
-            
-            <label for="mobilenumber"><b>Mobile Number:</b></label>
-            <input type="text" name="mobilenumber" placeholder="Mobile Number" required>
 
+                       
             <label for="email"><b>Email:</b></label>
             <input type="text" name="email" placeholder="Email" required>
             
@@ -125,15 +116,21 @@ button:hover {
             <p class="error-message">${errorMessage}</p>
             
         </form>
-           
- 
                   <div class="back-btn">
                 <form action="loginpage.jsp">
                     <button type="submit"><b>Back</b></button>
                 </form>
                 </div> 
+                
+       <%
+        String status = request.getParameter("status");
+        if (status != null) {
+                out.println("Registered Successfully");
+            }
+       %>      
+                
+                </div>
 </body>
-
 </html>
 
 

@@ -104,8 +104,18 @@ button:hover {
                <form action="adminloginpage.jsp">
                    <button type="submit"><b>Staff Login</b></button>
                </form>
-            </div> <br>         
-        </div>        
+            </div> <br>   
+            
+            <%
+        String error = request.getParameter("error");
+        if (error != null) {
+                out.println("<p>An error occurred. Please try again later.</p>");
+            }
+        
+    %>      
+        </div>  
+        
+                  
 </body> 
 
 </html>
