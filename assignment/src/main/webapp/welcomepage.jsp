@@ -22,7 +22,7 @@
             color: #016AAA ;
         }
         
-        button {
+    button {
 
     padding: 10px;
     background-color:#007bff;
