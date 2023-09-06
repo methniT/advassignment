@@ -1,11 +1,10 @@
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8">
-    <title>ADMIN LOGIN</title>
+    <title>ADD APPOINTMENT</title>
+</head>
 
-    <style>
+<style>
 
 * {
     margin: 0;
@@ -27,17 +26,25 @@ body {
     height: 100vh;
 
 }
+.navbar {
+            width: 100%;
+            color: #fff;
+            position: fixed;
+            padding: 10px;
+            top: 0;
+            left: 0;
+        }
 
-.login-container {
+.appointment-container {
     background-color: #fff;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.7);
     padding: 30px;
-    text-align: center;
+    text-align: left;
         width: 300px;
 }
 
-.login-form {
+.appointment-form {
     display: flex;
     flex-direction: column;
 }
@@ -74,35 +81,29 @@ button:hover {
 }
 
     </style>
-
-</head>
-
-<head>
-    <title>Login Page</title>
-</head>
 <body>
-    <div class="login-container">
-        <div class="login-header">
-            <h1>Admin Login</h1><br>
-        </div>
-        <form action="AdloginServlet" method="post" class="login-form">
-            <input type="text" name="username" placeholder="Username" required>
-            <input type="password" name="password" placeholder="Password" required><br>
-            <button type="submit">Login</button><br>
-        </form>
-            <form action="home.jsp">
-        <button type="submit"><b>Back</b></button>
-    </form><br> 
-    
-     <%
-        String error = request.getParameter("error");
-        if (error != null) {
-                out.println("<p>An error occurred. Please try again later.</p>");
-            }
-        
-    %> 
-    
- </div>
 
-</body> 
+
+
+<div class="appointment-container">
+        <div class="appointment-header">
+
+            <h1>ADD APPOINTMENT </h1><br>
+        </div>
+
+    <form action="AddAppointmentServlet" method="post">
+        <label for="id">ID:</label>
+        <input type="text" id="id" name="id" required><br><br>
+        <label for="date">Date:</label>
+        <input type="date" id="date" name="date" required><br><br>
+        <label for="time">Time:</label>
+        <input type="text" id="time" name="time" required><br><br>
+        <label for="consultant">Consultant:</label>
+        <input type="text" id="consultant" name="consultant" required><br><br>
+        <button type="submit">Schedule Appointment</button>
+
+    </form>
+</div>
+
+</body>
 </html>
