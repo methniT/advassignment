@@ -121,9 +121,9 @@ button:hover {
     </form>
     
     
-    <p><strong>Date:</strong> ${date2}</p><br>
-    <p><strong>Time:</strong> ${time2}</p><br>
-    <p><strong>Consultant:</strong> ${consultant2}</p><br>
+    <p><strong>Date:</strong> 2023-09-26</p><br>
+    <p><strong>Time:</strong> 5.00</p><br>
+    <p><strong>Consultant:</strong> Gayani Perera</p><br>
 
     </div>
 

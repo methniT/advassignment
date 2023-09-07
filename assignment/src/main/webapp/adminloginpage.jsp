@@ -97,7 +97,7 @@ button:hover {
      <%
         String error = request.getParameter("error");
         if (error != null) {
-                out.println("<p>An error occurred. Please try again later.</p>");
+                out.println("<p>Error occurred</p>");
             }
         
     %> 

@@ -95,7 +95,7 @@ button:hover {
         </div>
 
     
-    <form action="DeleterECEPServlet" method="post">
+    <form action="DeleteRecepServlet" method="post">
         <label for="Id"> ID:</label>
         <input type="text" id="Id" name="Id" required>
         <button type="submit">Delete</button>

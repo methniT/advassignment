@@ -3,7 +3,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>ADD CONSULTANT</title>
+    <title>ADD</title>
 
     <style>
 
@@ -98,9 +98,9 @@ button:hover {
 <body>
     <div class="add-container">
         <div class="add-header">
-            <h1>ADD CONSULTANT</h1><br><br>
+            <h1>ADD RECEPTIONIST</h1><br><br>
         </div>
-        <form action="AddConServlet" method="post">
+        <form action="AddRecepServlet" method="post">
     
     	<label for="id">ID:
     	<span style="white-space: pre;"> </span>
@@ -133,6 +133,7 @@ button:hover {
 <div class="add-btn">
             <button type="submit"><b>Add</b></button><br><br>
         </div>
+
 
         <%
         String error = request.getParameter("error");

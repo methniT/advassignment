@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>CANCEL APPOINTMENT</title>
+    <title>DELETE CONSULTANT</title>
 </head>
 
 <style>

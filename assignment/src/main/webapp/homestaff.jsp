@@ -50,6 +50,19 @@ body {
         width: 900px;
         margin: 60px auto;
 }
+    button {
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
 
 .center {
      text-align: center;
@@ -70,7 +83,12 @@ body {
 				<div class="center">
 				<h1>The Jobs</h1><br><br>
 				
-				<p>Welcome to the Job Advice Center, your dependable advisor on career development and employment.</p><br><br>
+				<p>Welcome to the Job Advice Center, your dependable advisor 
+				on career development and employment.</p><br><br><br>
+				
+				<form action="home.jsp">
+                    <button type="submit"><b>Home</b></button><br><br>
+                </form>
 				
 
         </div>
