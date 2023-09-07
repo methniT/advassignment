@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>HOME</title>
+<title>HOME ADMIN</title>
 
     <style>
 
@@ -20,7 +20,7 @@
 }
 
 body {
-    background-image: url('b9.jpg');
+    background-image: url('b3.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -56,20 +56,6 @@ body {
      margin-top: 20px; 
         }
         
-        button {
-    padding: 10px;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-button:hover {
-    background-color: #0056b3;
-}
-        
     </style>
 
 </head>
@@ -77,25 +63,18 @@ button:hover {
 <body>
 
     <div class="navbar">
-    <jsp:include page="navbar.jsp" />
+    <jsp:include page="navbaradmin.jsp" />
     </div>
     
 <div class="home-container">
-        <div class="center">
+				<div class="center">
 				<h1>The Jobs</h1><br><br>
 				
 				<p>Welcome to the Job Advice Center, your dependable advisor on career development and employment.</p><br><br>
 				
-				<form action="adminloginpage.jsp">
-                    <button type="submit"><b>Admin Login</b></button><br><br>
-                </form>
-                
-                <form action="staffloginpage.jsp">
-                    <button type="submit"><b>Staff Login</b></button><br><br>
-                </form>
-                
-                <p>If your are a Job Seeker, you can make an appointment for what you want.</p><br><br>
+
         </div>
+
 
 </div>
 
