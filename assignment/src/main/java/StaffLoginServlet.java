@@ -13,8 +13,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 
-@WebServlet("/AdloginServlet")
-public class AdloginServlet extends HttpServlet {
+@WebServlet("/StaffLoginServlet")
+public class StaffLoginServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
@@ -29,19 +29,19 @@ public class AdloginServlet extends HttpServlet {
 	        String username = request.getParameter("username");
 	        String password = request.getParameter("password");
 	        
-	        PreparedStatement ps = con.prepareStatement("select username from adminlogin where username = ? and password = ?");
-	        ps.setString(1,username);
-	        ps.setString(2, password);
-	        ResultSet rs = ps.executeQuery();
+	        PreparedStatement ps1 = con.prepareStatement("select username from stlogin where username = ? and password = ?");
+	        ps1.setString(1,username);
+	        ps1.setString(2, password);
+	        ResultSet rs = ps1.executeQuery();
 	        
 	        if(rs.next())
 	        {
-	        	RequestDispatcher rd = request.getRequestDispatcher("homeadmin.jsp");
-	        	rd.forward(request, response);
+	        	RequestDispatcher rd1 = request.getRequestDispatcher("homestaff.jsp");
+	        	rd1.forward(request, response);
 	        }
 	        else
 	        {
-	        	response.sendRedirect("adminloginpage.jsp?error");
+	        	response.sendRedirect("staffloginpage.jsp?error");
 	        }
 	        
 	        

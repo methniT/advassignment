@@ -4,15 +4,14 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("/UserProServlet")
-public class UserProServlet extends HttpServlet {
+@WebServlet("/ViewAppointmentsServlet")
+public class ViewAppointmentsServlet extends HttpServlet {
     /**
 	 * 
 	 */
@@ -34,7 +33,8 @@ public class UserProServlet extends HttpServlet {
 
             // Prepare a SQL query to retrieve user data based on the provided ID
             String userId = request.getParameter("id");
-            String sql = "SELECT email, username FROM login WHERE id = ?";
+            String sql = "SELECT date, time, consultant FROM appointments WHERE id = ?";
+
             PreparedStatement preparedStatement = conn.prepareStatement(sql);
             preparedStatement.setString(1, userId);
 
@@ -43,20 +43,22 @@ public class UserProServlet extends HttpServlet {
 
             // Check if a user with the given ID exists
             if (resultSet.next()) {
-                // Retrieve user data
-                String userEmail = resultSet.getString("email");
-                String userName = resultSet.getString("username");
 
-                // Set the email and username attributes in the request
-                request.setAttribute("email", userEmail);
-                request.setAttribute("username", userName);
+                String Apdate = resultSet.getString("date");
+                String Aptime = resultSet.getString("time");
+                String Consultant = resultSet.getString("consultant");
+
+
+                request.setAttribute("date", Apdate);
+                request.setAttribute("time", Aptime);
+                request.setAttribute("consultant", Consultant);
             } else {
-                // Handle the case where no user was found with the provided ID
-                request.setAttribute("error", "User not found");
+
+                request.setAttribute("error", "Not found");
             }
 
-            // Forward the request to the JSP page for rendering
-            request.getRequestDispatcher("/userprofilepage.jsp").forward(request, response);
+
+            request.getRequestDispatcher("/viewappointmentpage.jsp").forward(request, response);
 
         } catch (ClassNotFoundException | SQLException e) {
             e.printStackTrace();
@@ -71,6 +73,5 @@ public class UserProServlet extends HttpServlet {
             }
         }
 
-        // ... Rest of your servlet code ...
     }
 }
