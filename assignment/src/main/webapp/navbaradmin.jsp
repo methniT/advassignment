@@ -38,11 +38,13 @@
 <body>
     <nav>
         <ul>
-            <li><a href="contactpage.jsp">Contact</a></li>
-            <li><a href="aboutpage.jsp">About</a></li>
-            <li><a href="userprofilepage.jsp">User Profile</a></li>
-            <li><a href="appointmentpage.jsp">Appointment</a></li>
-            <li><a href="home.jsp">Home</a></li>
+            <li><a href="contactpagead.jsp">Contact</a></li>
+            <li><a href="aboutpagead.jsp">About</a></li>
+            <li><a href="managejspage.jsp">Job Seeker</a></li>
+            <li><a href="viewappointmentpage.jsp">Appointments</a></li>
+            <li><a href="managereceppage.jsp">Receptionists</a></li>
+            <li><a href="manageconpage.jsp">Consultants</a></li>
+            <li><a href="homeadmin.jsp">Home</a></li>
 
 
         </ul>

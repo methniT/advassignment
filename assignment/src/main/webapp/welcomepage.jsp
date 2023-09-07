@@ -48,9 +48,6 @@ button:hover {
      <form action="loginpage.jsp">
                    <button type="submit"><b>Get Started</b></button>
                </form>
-
-
-
 </body>
 </html>
 

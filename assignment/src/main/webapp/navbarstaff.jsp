@@ -8,7 +8,6 @@
         nav {    
             background-color: #4a4a4a ;
             overflow: hidden;
-            font-family: Georgia;
         }
 
         ul {
@@ -38,11 +37,10 @@
 <body>
     <nav>
         <ul>
-            <li><a href="contactpage.jsp">Contact</a></li>
-            <li><a href="aboutpage.jsp">About</a></li>
-            <li><a href="userprofilepage.jsp">User Profile</a></li>
-            <li><a href="appointmentpage.jsp">Appointment</a></li>
-            <li><a href="home.jsp">Home</a></li>
+            <li><a href="contactpagestaff.jsp">Contact</a></li>
+            <li><a href="aboutpagest.jsp">About</a></li>
+            <li><a href="viewappointmentpage.jsp">Appointments</a></li>
+            <li><a href="homestaff.jsp">Home</a></li>
 
 
         </ul>

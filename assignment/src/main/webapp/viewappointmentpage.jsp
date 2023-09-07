@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>USER PROFILE</title>
+    <title>VIEW APPOINTMENT</title>
 </head>
 
  <style>
@@ -110,19 +110,20 @@ button:hover {
     <div class="view-container">
         <div class="view-header">
 
-            <h1>USER PROFILE</h1><br><Br>
+            <h1>VIEW APPOINTMENT</h1><br><Br>
             </div>
 
     
-    <form action="UserProServlet" method="GET">
+    <form action="ViewAppointmentsServlet" method="GET">
         <label for="id">User ID:</label><br>
         <input type="text" id="id" name="id" required><br><br>
-       <button type="submit"><b>View Profile</b></button><br><br><br>
+       <button type="submit"><b>View Appointment</b></button><br><br><br>
     </form>
     
     
-    <p><strong>Email:</strong> ${email}</p><br>
-    <p><strong>Username:</strong> ${username}</p>
+    <p><strong>Date:</strong> ${date2}</p><br>
+    <p><strong>Time:</strong> ${time2}</p><br>
+    <p><strong>Consultant:</strong> ${consultant2}</p><br>
 
     </div>
 

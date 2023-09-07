@@ -11,7 +11,6 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    
 }
 
 body {
@@ -110,7 +109,10 @@ button:hover {
             <input type="text" name="username" placeholder="Username" required>
             
             <label for="password"><b>Password:</b></label>
-            <input type="password" name="password" placeholder="Password" required><br>
+            <input type="password" name="password" placeholder="Password" required>
+            
+            <label for="id"><b>ID:</b></label>
+            <input type="text" name="id" placeholder="ID" required><br>
             
             <button type="submit"><b>Register</b></button><br><br>
             <p class="error-message">${errorMessage}</p>
@@ -121,13 +123,13 @@ button:hover {
                     <button type="submit"><b>Back</b></button>
                 </form>
                 </div> 
-                
-       <%
-        String status = request.getParameter("status");
-        if (status != null) {
-                out.println("Registered Successfully");
+                                          <%
+        String error = request.getParameter("error");
+        if (error != null) {
+                out.println("<p>An error occurred. Please try again later.</p>");
             }
-       %>      
+        
+    %>  
                 
                 </div>
 </body>

@@ -3,10 +3,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>USER PROFILE</title>
+<meta charset="ISO-8859-1">
+<title>UPDATE</title>
 </head>
 
- <style>
+
+<style>
 
 * {
     margin: 0;
@@ -26,8 +28,7 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    font-size: 15px;
-    
+
 }
 .navbar {
             width: 100%;
@@ -38,21 +39,16 @@ body {
             left: 0;
         }
 
-
-.view-container {
+.update-container {
     background-color: #fff;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.7);
     padding: 30px;
     text-align: left;
-    width: 300px;
+        width: 300px;
 }
 
-.paragraph {
-    font-size: 16px;
-}
-
-.view-form {
+.update-form {
     display: flex;
     flex-direction: column;
 }
@@ -64,7 +60,7 @@ h2 {
 
 input[type="text"],
 input[type="password"] {
-    padding: 7px;
+    padding: 10px;
     margin-bottom: 10px;
     border: 1px solid #ccc;
     border-radius: 4px;
@@ -77,56 +73,38 @@ button {
     border: none;
     border-radius: 4px;
     cursor: pointer;
-    transition: background-color 0.8s ease;
-    text-align: center;
-    
+    transition: background-color 0.3s ease;
 }
 
 button:hover {
     background-color: #0056b3;
 }
 
-
 .error-message {
     color: #ff3d3d;
 }
 
-.register-header {
-            font-size: 16px;
-            font-weight: bold;
-            text-align: center;
-   }         
-.back-btn{
-            font-size: 24px;
-            font-weight: bold;
-            text-align: center;
-}
-
     </style>
+    
 <body>
 
+<div class="update-container">
+        <div class="update-header">
+        <form action="UpdateRecepServlet" method="post">
+        
 
-
-    <div class="view-container">
-        <div class="view-header">
-
-            <h1>USER PROFILE</h1><br><Br>
-            </div>
-
-    
-    <form action="UserProServlet" method="GET">
-        <label for="id">User ID:</label><br>
-        <input type="text" id="id" name="id" required><br><br>
-       <button type="submit"><b>View Profile</b></button><br><br><br>
-    </form>
-    
-    
-    <p><strong>Email:</strong> ${email}</p><br>
-    <p><strong>Username:</strong> ${username}</p>
-
-    </div>
-
+            <h1>UPDATE RECEPTIONIST </h1><br><br>
+                Receptionist ID: <input type="text" name="consultantId"><br>
+    			New Name: <input type="text" name="fullname"><br>
+    			Mobile Number: <input type="text" name="mobilenumber"><br>
+    			Email Address: <input type="text" name="email"><br>
+    			Username: <input type="text" name="username"><br>
+    			Password: <input type="text" name="password"><br>
+        
+        <button type="submit">Update</button>
+</form>
+</div>
+</div>
 
 </body>
 </html>
-

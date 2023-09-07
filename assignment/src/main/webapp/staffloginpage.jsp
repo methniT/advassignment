@@ -3,7 +3,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>LOGIN</title>
+    <title>STAFF LOGIN</title>
 
     <style>
 
@@ -77,47 +77,31 @@ button:hover {
 
 </head>
 
+<head>
+    <title>Login Page</title>
+</head>
 <body>
     <div class="login-container">
         <div class="login-header">
-            <h1>Login</h1><br>
+            <h1>Staff Login</h1><br>
         </div>
-        <form action="LoginServlet" method="post" class="login-form">
+        <form action="StaffLoginServlet" method="post" class="login-form">
             <input type="text" name="username" placeholder="Username" required>
-            <input type="password" name="password" placeholder="Password" required>
-            <button type="submit"><b>Login</b></button><br><br>
-            <p class="error-message">${errorMessage}</p>
+            <input type="password" name="password" placeholder="Password" required><br>
+            <button type="submit">Login</button><br>
         </form>
-                <div>
-                     <p>If you don't have an account...</p><br>
-                <form action="registerpage.jsp">
-                    <button type="submit"><b>Register</b></button>
-                </form>
-                </div> <br>  
-    
-    <form action="welcomepage.jsp">
+            <form action="home.jsp">
         <button type="submit"><b>Back</b></button>
-    </form><br><br>
-
-                  <div>
-                 <h6>Admin or Staff... Click the button</h6><br>
-               <form action="home.jsp">
-                   <button type="submit"><b>Staff Login</b></button>
-               </form>
-            </div> <br>   
-            
-                      <%
+    </form><br> 
+    
+        <%
         String error = request.getParameter("error");
         if (error != null) {
                 out.println("<p>An error occurred. Please try again later.</p>");
             }
-    %>      
-        </div>  
-        
-                  
+    %> 
+    
+ </div>
+
 </body> 
-
 </html>
-
-
-
